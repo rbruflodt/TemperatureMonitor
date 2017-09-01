@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?package TemperatureMonitorPackage?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="864.0" xmlns="http://javafx.com/javafx/8.0.60" xmlns:fx="http://javafx.com/fxml/1" fx:controller="TemperatureMonitorPackage.TemperatureMonitorController">
+   <children>
+      <Label alignment="TOP_CENTER" contentDisplay="CENTER" text="Remote Temperature Sensor Data" textAlignment="CENTER" textFill="#3f32cc">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <LineChart prefHeight="425.0" prefWidth="269.0" title="Temperature Data">
+         <xAxis>
+            <NumberAxis side="BOTTOM" fx:id="xAxis" />
+         </xAxis>
+         <yAxis>
+            <NumberAxis fx:id="yAxis" side="LEFT" />
+         </yAxis>
+      </LineChart>
+      <ScrollPane fitToHeight="true" fitToWidth="true" hvalue="0.5" pannable="true" pickOnBounds="false" prefHeight="180.0" prefWidth="840.0" style="-fx-background-color: transparent;" vvalue="0.5">
+         <content>
+            <StackPane minHeight="160.0" minWidth="818.0" prefHeight="160.0" prefWidth="818.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="160.0" prefWidth="818.0" spacing="20.0" StackPane.alignment="CENTER">
+                     <children>
+                        <VBox alignment="CENTER" prefHeight="200.0" spacing="15.0" HBox.hgrow="NEVER">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Real-Time Temperature">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <VBox alignment="CENTER" prefHeight="200.0" spacing="15.0">
+                                 <children>
+                                    <Label text="0" textFill="#3f32cc">
+                                       <font>
+                                          <Font size="48.0" />
+                                       </font>
+                                    </Label>
+                                    <HBox alignment="CENTER" spacing="20.0">
+                                       <children>
+                                          <RadioButton mnemonicParsing="false" selected="true" text="°C">
+                                             <toggleGroup>
+                                                <ToggleGroup fx:id="temperature_unit1" />
+                                             </toggleGroup>
+                                          </RadioButton>
+                                          <RadioButton mnemonicParsing="false" text="°F" toggleGroup="$temperature_unit1" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets top="10.0" />
+                                       </opaqueInsets>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="200.0" spacing="25.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Virtual Button Press">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="virtualButton" mnemonicParsing="false" onAction="#virtualButtonPressed" prefHeight="84.0" prefWidth="85.0" style="-fx-background-color: BLACK;" text="Button Off" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </VBox>
+                        <VBox alignment="CENTER" spacing="10.0">
+                           <children>
+                              <Label style="-fx-font-weight: bold;" text="Text Message Alert">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <HBox alignment="CENTER" spacing="15.0">
+                                 <children>
+                                    <Label text="Cell Phone #:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="15.0">
+                                 <children>
+                                    <Label text="Minimum Temperature:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="25.0" prefWidth="41.0" />
+                                    <Label text="Message:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea prefHeight="50.0" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" spacing="15.0">
+                                 <children>
+                                    <Label text="Minimum Temperature:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextField prefHeight="25.0" prefWidth="41.0" />
+                                    <Label text="Message:">
+                                       <font>
+                                          <Font size="14.0" />
+                                       </font>
+                                    </Label>
+                                    <TextArea prefHeight="50.0" prefWidth="200.0" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+               </children>
+            </StackPane>
+         </content>
+      </ScrollPane>
+   </children>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+</VBox>
